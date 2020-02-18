@@ -4,40 +4,46 @@ This action provides `kubectl` for Github Actions.
 
 ## Usage
 
-`.github/workflows/push.yml`
+In your workflow, here is an example that deploys your new image and verifies it is successful.
 
 ```yaml
 on: push
-name: deploy
+name: Deploy
 jobs:
   deploy:
-    name: deploy to cluster
+    name: Deploy to cluster
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@master
-    - name: deploy to cluster
+    - name: Deploy to cluster
       uses: nickgronow/kubectl@master
       with:
         config_data: ${{ secrets.kube_config }}
-        args: set image --record deployment/my-app container=${{ github.repository }}:${{ github.sha }}
-    - name: verify deployment
+        args: set image --record deployment/<my-deploy> <my-container>=<my-image>:<new-tag>
+    - name: Verify deployment
       uses: nickgronow/kubectl@master
       with:
         config_data: ${{ secrets.kube_config }}
         version: "1.15"
-        args: '"rollout status deployment/my-app"'
+        args: '"rollout status deployment/<my-deploy>"'
 ```
 
-## Secrets
+## Kube configuration
 
-`KUBE_CONFIG_DATA` – **required**: A base64-encoded kubeconfig file with credentials for Kubernetes to access the cluster. You can get it by running the following command:
+Make sure to base64-encode your kubeconfig file and putting it in a github secret.  You can get the string by running:
 
 ```bash
 cat $HOME/.kube/config | base64
 ```
 
-## Environment
+## Kubectl version
 
-`KUBECTL_VERSION` - (optional): Used to specify the kubectl version. If not specified, this defaults to kubectl 1.13
+Specify a kubectl version by adding `version` to the `with:` section, like so:
 
-**Note**: Do not use kubectl config view as this will hide the certificate-authority-data.
+```yaml
+steps:
+- name: some name
+  uses: nickgronow/kubectl@master
+  with:
+    version: "1.15"
+```
