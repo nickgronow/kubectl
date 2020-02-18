@@ -1,6 +1,6 @@
 # Github Action for Kubernetes CLI
 
-This action provides `kubectl` for Github Actions.
+This action provides `kubectl` for Github Actions.  I decided to release this because all of the other kubectl actions in the marketplace build an image every time they run.  Why bother when they are already built on Docker Hub?  This shaves off over a minute in your ci/cd pipeline.
 
 ## Usage
 
