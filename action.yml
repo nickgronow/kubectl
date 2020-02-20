@@ -14,4 +14,3 @@ inputs:
 runs:
   using: "docker"
   image: "docker://nickgronow/kubectl:1.17.3"
-  entrypoint: ./entrypoint.sh
