@@ -1,6 +1,6 @@
 # Github Action for Kubernetes CLI
 
-This action provides `kubectl` for Github Actions.  I decided to release this because all of the other kubectl actions in the marketplace build an image every time they run.  Why bother when they are already built on Docker Hub?  This shaves off over a minute in your ci/cd pipeline.
+This action provides `kubectl` for Github Actions.  I decided to release this because all of the other kubectl actions in the marketplace build an image every time they run.  I will be maintaining a built image hosted on docker hub that hopefully stays up-to-date with the Bitnami Kubectl.  This shaves off over a minute in your ci/cd pipeline.
 
 ## Usage
 
@@ -42,7 +42,7 @@ Specify a kubectl version by adding `version` to the `with:` section, like so:
 
 ```yaml
 steps:
-- name: some name
+- name: Step Name
   uses: nickgronow/kubectl@master
   with:
     version: "1.15"
