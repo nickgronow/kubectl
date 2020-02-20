@@ -1,0 +1,21 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  push-to-docker:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - uses: elgohr/Publish-Docker-Github-Action@master
+      name: Publish to Docker
+      with:
+        name: nickgronow/kubectl
+        username: ${{ secrets.docker_username }}
+        password: ${{ secrets.docker_password }}
+        tags: latest,1.17.3
+        cache: true

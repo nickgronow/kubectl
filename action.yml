@@ -13,5 +13,5 @@ inputs:
     required: false
 runs:
   using: "docker"
-  image: "docker://bitnami/kubectl"
+  image: "docker://nickgronow/kubectl:1.17.3"
   entrypoint: ./entrypoint.sh
