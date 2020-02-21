@@ -41,20 +41,21 @@ cat $HOME/.kube/config | base64
 
 ## Kubectl version
 
-The Kubectl version that is used is driven by the action version you specify.  To select a specific one, simply change the ref in the `uses` option, like so:
+The Kubectl version that is used is driven by the action version you specify.  If you want to use the latest kubectl version, simply provide `master` as the ref.  To select a specific version, simply change the ref in the `uses` option, like so:
 
 ```yaml
 steps:
 - name: Step Name
-  uses: nickgronow/kubectl@1.15
+  uses: nickgronow/kubectl@v1.15
 ```
 
-## Supported versions
+## Supported kubectl tags
 
-* 1.17.3
-* 1.17
-* 1.16
-* 1.15
-* 1.14
-* 1.13
-* 1.12
+* master
+* v1.17.3
+* v1.17
+* v1.16
+* v1.15
+* v1.14
+* v1.13
+* v1.12
