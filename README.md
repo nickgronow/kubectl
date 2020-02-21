@@ -28,7 +28,6 @@ jobs:
       uses: nickgronow/kubectl@master
       with:
         config_data: ${{ secrets.kube_config }}
-        version: "1.16"
         args: '"rollout status deployment/<my-deploy>"'
 ```
 
@@ -42,18 +41,20 @@ cat $HOME/.kube/config | base64
 
 ## Kubectl version
 
-Specify a kubectl version by adding `version` to the `with:` section, like so:
+The Kubectl version that is used is driven by the action version you specify.  To select a specific one, simply change the ref in the `uses` option, like so:
 
 ```yaml
 steps:
 - name: Step Name
-  uses: nickgronow/kubectl@master
-  with:
-    version: "1.15"
+  uses: nickgronow/kubectl@1.15
 ```
 
-## Currently supported versions
+## Supported versions
 
 * 1.17.3
-* 1.16.3
+* 1.17
 * 1.16
+* 1.15
+* 1.14
+* 1.13
+* 1.12
