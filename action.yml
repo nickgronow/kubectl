@@ -10,4 +10,4 @@ inputs:
     required: true
 runs:
   using: docker
-  image: docker://nickgronow/kubectl:1.13
+  image: docker://nickgronow/kubectl:1.12
