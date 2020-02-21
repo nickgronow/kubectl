@@ -1,6 +1,10 @@
 # Github Action for Kubernetes CLI
 
-This action provides `kubectl` for Github Actions.  I decided to release this because all of the other kubectl actions in the marketplace build an image every time they run.  I will be maintaining a built image hosted on docker hub that hopefully stays up-to-date with the Bitnami Kubectl.  This shaves off over a minute in your ci/cd pipeline.
+This action provides `kubectl` for Github Actions.
+
+## Why another Kubectl Github Action?
+
+We need a Kubectl action that has already been built with an image hosted on Docker Hub.  Every other Kubectl action in the marketplace build an image every time they run.  I will be maintaining a built image hosted on docker hub that hopefully stays up-to-date with the Bitnami Kubectl.  This shaves off quite a bit of time in your pipeline.
 
 ## Usage
 
@@ -24,7 +28,7 @@ jobs:
       uses: nickgronow/kubectl@master
       with:
         config_data: ${{ secrets.kube_config }}
-        version: "1.15"
+        version: "1.16"
         args: '"rollout status deployment/<my-deploy>"'
 ```
 
@@ -47,3 +51,9 @@ steps:
   with:
     version: "1.15"
 ```
+
+## Currently supported versions
+
+* 1.17.3
+* 1.16.3
+* 1.16
