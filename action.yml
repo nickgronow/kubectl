@@ -1,6 +1,6 @@
-name: "Kubectl utility"
-description: "Use bitnami's built latest kubectl with custom entrypoint"
-author: "Nicholas Gronow <nick@wov.io>"
+name: Kubectl utility
+description: Use bitnami's built latest kubectl with custom entrypoint
+author: Nicholas Gronow <nick@wov.io>
 branding:
   icon: terminal
   color: blue
@@ -8,10 +8,6 @@ inputs:
   config_data:
     description: The kube config data base64 encoded
     required: true
-  version:
-    description: Kubectl version to use
-    required: false
-    default: 1.17.3
 runs:
-  using: "docker"
-  image: "docker://nickgronow/kubectl:${{ inputs.version }}"
+  using: docker
+  image: docker://nickgronow/kubectl:1.17
