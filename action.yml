@@ -1,5 +1,5 @@
 name: Kubectl utility
-description: Use bitnami's built latest kubectl with custom entrypoint
+description: Use bitnami's latest kubectl with your Github actions
 author: Nicholas Gronow <nick@wov.io>
 branding:
   icon: terminal
