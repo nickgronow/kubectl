@@ -1,3 +1,5 @@
+![Continuous Integration](https://github.com/nickgronow/kubectl/workflows/Continuous%20Integration/badge.svg)
+
 # Github Action for Kubernetes CLI
 
 This action provides `kubectl` for Github Actions.
