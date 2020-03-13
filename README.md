@@ -52,6 +52,7 @@ steps:
 ## Supported kubectl tags
 
 * master
+* v1.17.4
 * v1.17.3
 * v1.17
 * v1.16
