@@ -4,6 +4,7 @@ on:
   push:
     paths:
       - Dockerfile
+      - entrypoint.sh
     branches:
       - master
 
