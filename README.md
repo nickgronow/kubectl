@@ -33,7 +33,7 @@ jobs:
 
 ## Kube configuration
 
-Make sure to base64-encode your kubeconfig file and putting it in a github secret.  You can get the string by running:
+Make sure to base64-encode your kubeconfig file and put it in a github secret.  You can get the string by running:
 
 ```bash
 cat $HOME/.kube/config | base64
