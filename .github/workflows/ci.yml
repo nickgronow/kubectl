@@ -20,5 +20,5 @@ jobs:
         name: nickgronow/kubectl
         username: ${{ secrets.docker_username }}
         password: ${{ secrets.docker_password }}
-        tags: latest,1.17.4
+        tags: latest,1.19.13
         cache: true

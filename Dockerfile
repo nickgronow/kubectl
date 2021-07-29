@@ -1,6 +1,6 @@
-FROM bitnami/kubectl:1.17.4
+FROM bitnami/kubectl:1.19.13
 
-LABEL version="1.0.1"
+LABEL version="1.0.2"
 LABEL name="kubectl"
 LABEL repository="http://github.com/nickgronow/kubectl"
 LABEL homepage="http://github.com/nickgronow/kubectl"
