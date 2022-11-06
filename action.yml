@@ -10,4 +10,4 @@ inputs:
     required: true
 runs:
   using: docker
-  image: docker://ghcr.io/innovaciongascaribe/kubectl:1.20.15
+  image: docker://ghcr.io/innovaciongascaribe/kubectl:1.21.14
