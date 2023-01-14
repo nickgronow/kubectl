@@ -21,5 +21,5 @@ jobs:
         registry: ghcr.io
         username: ${{ github.actor }}
         password: ${{ secrets.GITHUB_TOKEN }}
-        tags: latest,1.22.16
+        tags: latest,1.23.15
         cache: true
