@@ -14,7 +14,7 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: elgohr/Publish-Docker-Github-Action@v4
+    - uses: elgohr/Publish-Docker-Github-Action@v5
       name: Publish to Docker
       with:
         name: innovaciongascaribe/kubectl
