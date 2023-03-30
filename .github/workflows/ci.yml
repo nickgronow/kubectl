@@ -14,11 +14,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: elgohr/Publish-Docker-Github-Action@master
+    - uses: elgohr/Publish-Docker-Github-Action@v5
       name: Publish to Docker
       with:
-        name: nickgronow/kubectl
-        username: ${{ secrets.docker_username }}
-        password: ${{ secrets.docker_password }}
-        tags: latest,1.17.4
+        name: innovaciongascaribe/kubectl
+        registry: ghcr.io
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+        tags: latest,1.23.15
         cache: true
